@@ -1,7 +1,7 @@
 console.log('[PI-V2] START: MODAL UTILS');
 
 // 주문 4 버튼 클릭 시 모달 창 표시
-document.getElementById("order-4").addEventListener("click", function() {
+document.getElementById("submit").addEventListener("click", function() {
     var modal = document.getElementById("myModal");
     var userId = document.getElementById("userId").value;
     var password = document.getElementById("password").value;
