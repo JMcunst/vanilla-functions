@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modal Example</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<h2>Modal Example</h2>
+
+<!-- 사용자 입력 폼 -->
+<form id="userForm">
+  <p>아이디: <input type="text" id="userId"></p>
+  <p>비밀번호: <input type="password" id="password"></p>
+  <button type="button" id="order-4">주문 4</button>
+</form>
+
+<!-- 모달 -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Modal Header</h3>
+    <p>아이디: <span id="modalUserId"></span></p>
+    <p>비밀번호: <span id="modalPassword"></span></p>
+    <button class="close-btn">닫기</button>
+  </div>
+</div>
+
+<script src="modal.js"></script>
+
+</body>
+</html>
