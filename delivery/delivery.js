@@ -159,13 +159,19 @@ function searchTracking() {
     var selectedCourier = courierDropdown.value;
     var trackingNumberInput = document.getElementById("tracking-number-input");
     var trackingNumber = trackingNumberInput.value;
+    var resultContainer = document.getElementById("result-container");
+  
+    // 결과를 초기화
+    resultContainer.innerHTML = "";
   
     if (selectedCourier && trackingNumber) {
       var apiUrl = "https://apis.tracker.delivery/carriers/" + selectedCourier + "/tracks/" + trackingNumber;
   
       // AJAX 요청 등 API 호출을 처리하는 코드 작성
-      // 이 예시에서는 console.log로 호출 URL을 출력
-      console.log("API 호출 URL:", apiUrl);
+      // 이 예시에서는 결과를 단순히 화면에 출력
+      var result = document.createElement("p");
+      result.textContent = "Carrier ID: " + selectedCourier + ", Track ID: " + trackingNumber;
+      resultContainer.appendChild(result);
     } else {
       console.log("Please select a courier and enter a tracking number.");
     }
