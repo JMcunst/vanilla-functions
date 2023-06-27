@@ -139,7 +139,7 @@ var couriers = [
 function populateCourierDropdown() {
   var dropdown = document.getElementById("courier-dropdown");
   var errorMessage = document.querySelector(".error-message");
-  
+
   dropdown.addEventListener("change", function () {
     dropdown.classList.remove("error");
     errorMessage.style.display = "none";
@@ -170,8 +170,8 @@ function searchTracking() {
   // 결과를 초기화
   resultContainer.innerHTML = "";
   errorMessage.style.display = "none";
+  resultContainer.style.display = "none";
 
-  console.log(selectedCourier);
   if (selectedCourier === "택배사를 선택해주세요.") {
     // 택배사를 선택하지 않았을 때 경고를 표시
     courierDropdown.classList.add("error");
@@ -188,22 +188,17 @@ function searchTracking() {
 
     fetch(apiUrl)
       .then(function (response) {
-        // 응답 데이터를 JSON 형식으로 파싱
         return response.json();
       })
       .then(function (data) {
-        // API 응답 데이터를 처리
         var result = document.createElement("p");
-        result.textContent = JSON.stringify(data);
+        result.textContent = data.message;
         resultContainer.appendChild(result);
+        resultContainer.style.display = "block";
       })
       .catch(function (error) {
         console.log("Error:", error);
       });
-    var result = document.createElement("p");
-    result.textContent =
-      "Carrier ID: " + selectedCourier + ", Track ID: " + trackingNumber;
-    resultContainer.appendChild(result);
   } else {
     console.log("Please select a courier and enter a tracking number.");
   }

@@ -90,6 +90,7 @@ select option:checked {
 }
 
 #result-container {
+  display: none;
   margin-top: 20px;
   padding: 10px;
   background-color: #f5f5f5;
