@@ -8,8 +8,16 @@
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  max-width: 450px;
 }
 .search-icon {
   margin-left: 5px;
   cursor: pointer;
+  font-size: 24px;
 }
+
+.search-icon:hover {
+  background-color: lightgray;
+  border-radius: 20%;
+}
+
