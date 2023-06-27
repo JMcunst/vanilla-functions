@@ -1,3 +1,37 @@
+/* 기본 스타일 */
+select {
+  appearance: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 드롭다운 화살표 아이콘 */
+select::after {
+  content: '\25BC';
+  position: absolute;
+  top: calc(50% - 6px);
+  right: 10px;
+  font-size: 12px;
+}
+
+/* 호버 시 스타일 변화 */
+select:hover {
+  border-color: #3694d7;
+}
+
+/* 선택된 옵션 스타일 */
+select option:checked {
+  background-color: #3694d7;
+  color: #fff;
+}
+
 .search-container {
   display: flex;
   align-items: center;
@@ -11,7 +45,7 @@
 
 .search-input {
   flex-grow: 1;
-  padding: 10px;
+  padding: 6px;
   border: none;
   outline: none;
   font-size: 16px;
