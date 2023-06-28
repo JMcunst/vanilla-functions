@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>번역기</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="translation-container">
+    <textarea id="input-text"></textarea>
+    <button id="translate-button">번역</button>
+  </div>
+  <div id="translated-result"></div>
+
+  <script src="translation.js"></script>
+  <script>
+    var translateButton = document.getElementById("translate-button");
+    translateButton.addEventListener("click", translateText);
+
+    function translateText() {
+      var inputText = document.getElementById("input-text").value;
+
+      fetchTranslation(inputText)
+        .then(function (translatedText) {
+          var resultContainer = document.getElementById("translated-result");
+          resultContainer.textContent = translatedText;
+        })
+        .catch(function (error) {
+          console.log("Translation error:", error);
+        });
+    }
+  </script>
+</body>
+
+</html>
